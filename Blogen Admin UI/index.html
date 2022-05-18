@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="./stuffs/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+  integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+  crossorigin="anonymous">
+  <title>Blogen</title>
+</head>
+<body> 
+   
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0 fixed-top">
+    <div class="container">
+     <a href="index.html" class="navbar-brand"> Blogen</a>
+     <button class="navbar-toggler  " data-bs-toggle="collapse" data-bs-target="#navbarcollapse"><span class="navbar-toggler-icon"></span></button>
+     
+     <div class="collapse navbar-collapse" id="navbarcollapse">
+        <ul class="navbar-nav ms-auto">
+           <li class="nav-item  px-2 ">
+             <a href="index.html" class="nav-link  active">Dashboard</a>
+          </li>
+          <li class="nav-item px-2">
+             <a href="posts.html" class="nav-link">Posts</a>
+          </li>
+          <li class="nav-item px-2">
+             <a href="categories.html" class="nav-link ">Categories</a></li>
+          <li class="nav-item px-2">
+             <a href="users.html" class="nav-link ">Users</a>
+          </li>
+       </ul>
+       <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown mr-3">
+                <a href="a" class="nav-link dropdown-toggle " data-bs-toggle="dropdown" >
+                  <i class="fas fa-user px-2">Welcome Brad</i>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="profile.html" class="dropdown-item"><i class="fas fa-user-circle px-1"></i>  Profile</a>
+
+                    <a href="settings.html" class="dropdown-item"><i class="fas fa-cog px-1"></i>  Settings</a>
+                </div> 
+            </li>
+            <li class="nav-item">
+                <a href="login.html" class="nav-link">
+                  <i class="fas fa-user-times px-1"></i>Logout
+                </a>
+            </li>
+       </ul>
+     </div>
+    </div>
+  </nav><br><br>
+  
+  <!-- Header -->
+  <header id="main-header" class="py-2 bg-primary text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1><i class="fas fa-cog"> </i>Dashboard</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Action -->
+  <section id="actions" class="py-4 mb-4 bg-light">
+      <div class="container">
+        <div class="row">
+           <div class="col-md-4">
+              <a href="#" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#addpostmodal">
+                 <i class="fas fa-plus"></i> Add Post
+              </a>
+           </div>
+           <div class="col-md-4">
+              <a href="#" class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#addcategorymodal">
+                 <i class="fas fa-plus"></i> Add Category
+              </a></div>
+          
+           <div class="col-md-4">
+              <a href="#" class="btn btn-warning w-100" data-bs-toggle="modal" data-bs-target="#addpostusermodal">
+                 <i class="fas fa-plus"></i> Add user
+              </a>
+           </div>
+      </div>
+  </section>
+ 
+<!-- Modals -->
+<!-- ADD POST MODAL -->
+ <div class="modal fade " id="addpostmodal">
+     <div class="modal-dialog modal-lg">
+             <div class="modal-content">
+               <div class="modal-header bg-primary  text-white">
+                <h5 class="modal-title">Add Post</h5>
+                <button class="close" data-bs-dismiss="modal"><span>&times;</span></button>
+               </div>
+               <div class="modal-body">
+                
+                  <form action="">
+                          <div class="form-group">
+                            <input type="text" placeholder="Title" class="form-control">
+                          </div>
+                          <div class="form-group">
+                           <label for="category" class="form-label">Category</label>
+                           <input type="text" class="form-control" list="datalistOptions" id="category" placeholder="Type to Search...">
+                           <datalist id="datalistOptions" >
+                             <option value="Web development" cla></option>
+                             <option value="Tech gadgets"></option>
+                             <option value="Business"></option>
+                             <option value="Health & wealth"></option>
+                           </datalist>
+                          </div>
+                          <div class="form-group">
+                             <label for="image">Upload image</label>
+                             <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="image">
+                                <label for="image" class="custom-file-label">Choose file</label>
+                             </div>
+                             <small class="form-text text-muted">Max size 3mb</small>
+                          </div>
+                         
+                          <div class="form-group">
+                             <label for="body">Body</label>
+                             <textarea name="editor1" class="form-control"></textarea>
+                          </div>
+                  </form>
+               </div>
+               <div class="modal-footer">
+                  <button class="btn btn-primary"data-bs-dismiss="modal">Save Changes</button>
+               </div>
+             </div>
+     </div>
+ </div>
+<!-- ADD Category MODAL -->
+ <div class="modal fade " id="addcategorymodal">
+     <div class="modal-dialog modal-lg">
+             <div class="modal-content">
+               <div class="modal-header bg-success  text-white">
+                <h5 class="modal-title">Add Category</h5>
+                <button class="close" data-bs-dismiss="modal"><span>&times;</span></button>
+               </div>
+               <div class="modal-body">
+                
+                  <form action="">
+                          <div class="form-group">
+                            <input type="text" placeholder="Title" class="form-control">
+                          </div>
+
+                        </form>
+               </div>
+               <div class="modal-footer">
+                  <button class="btn btn-success"data-bs-dismiss="modal">Save Changes</button>
+               </div>
+             </div>
+     </div>
+ </div>
+<!-- ADD User MODAL -->
+ <div class="modal fade " id="addpostusermodal">
+     <div class="modal-dialog modal-lg">
+             <div class="modal-content">
+               <div class="modal-header bg-warning  text-white">
+                <h5 class="modal-title">Add User</h5>
+                <button class="close" data-bs-dismiss="modal"><span>&times;</span></button>
+               </div>
+               <div class="modal-body">
+                <input type="text" placeholder="Name" class="form-control"><br>
+                <input type="email" placeholder="Email" class="form-control"><br>
+                <input type="password" placeholder="Password" class="form-control"><br>
+                <input type="password" placeholder=" Confirm Password" class="form-control"><br>
+               
+               </div>
+               <div class="modal-footer">
+                  <button class="btn btn-warning"data-bs-dismiss="modal">Save Changes</button>
+               </div>
+             </div>
+     </div>
+ </div>
+ <!-- Posts -->
+ <section id="posts">
+    <div class="container">
+       <div class="row">
+         <div class="col-md-9">
+            <div class="card">
+               <div class="card-header"> <h4>Latest Posts</h4></div>
+               <table class="table table-striped">
+                  <thead class="thead-dark bg-dark text-white">
+                      <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th></th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Post One </td>
+                      <td>Web development </td>
+                      <td>15 July 2022</td>
+                      <td> 
+                        <a href="details.html" class="btn btn-secondary"><i class="fas fa-angle-double-right"></i>details</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>Post two </td>
+                      <td>Tech Gadgets</td>
+                      <td>11 May 2022</td>
+                      <td> 
+                        <a href="details.html" class="btn btn-secondary"><i class="fas fa-angle-double-right"></i>details</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>Post Three </td>
+                      <td>Web development </td>
+                      <td>13 June 2022</td>
+                      <td> 
+                        <a href="details.html" class="btn btn-secondary"><i class="fas fa-angle-double-right"></i>details</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>Post Four </td>
+                      <td>Business </td>
+                      <td>12 Feb 2022</td>
+                      <td> 
+                        <a href="details.html" class="btn btn-secondary"><i class="fas fa-angle-double-right"></i>details</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>Post Five </td>
+                      <td>Web development </td>
+                      <td>10 April 2022</td>
+                      <td> 
+                        <a href="details.html" class="btn btn-secondary"><i class="fas fa-angle-double-right"></i>details</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>Post Six </td>
+                      <td>Health & Wellness </td>
+                      <td>15 Nov 2022</td>
+                      <td> 
+                        <a href="details.html" class="btn btn-secondary"><i class="fas fa-angle-double-right"></i>details</a>
+                      </td>
+                    </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div class="col-md-3">
+           <div class="card text-center bg-primary text-white my-3">
+             <div class="card-body">
+                <h3>Posts</h3>
+                <h4 class="display-4"><i class="fas fa-pencil-alt"></i> 6</h4>
+                <a href="posts.html" class="btn btn-outline-light btn-sm">Views</a>
+             </div>
+           </div>
+           <div class="card text-center bg-success text-white my-3">
+             <div class="card-body">
+                <h3>Categories</h3>
+                <h4 class="display-4"><i class="fas fa-folder"></i> 4</h4>
+                <a href="posts.html" class="btn btn-outline-light btn-sm">Views</a>
+             </div>
+           </div>
+           <div class="card text-center bg-warning text-white my-3">
+             <div class="card-body">
+                <h3>Users</h3>
+                <h4 class="display-4"><i class="fas fa-users"></i>  4</h4>
+                <a href="posts.html" class="btn btn-outline-light btn-sm">Views</a>
+             </div>
+           </div>
+         </div>
+       </div>
+    </div>
+ </section>
+
+
+
+
+
+
+
+ <!-- Footer -->
+ <footer id="main-footer" class="text-center bg-dark text-white p-5" >
+  <div class="container">
+       <div class="row">
+            <div class="col ">
+                  <p class="lead
+                   ">Copyright &copy 2022 Glozzom</p>
+            </div>
+       </div>
+  </div>
+</footer>
+
+
+
+<!-- required js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js" integrity="sha512-WNZwVebQjhSxEzwbettGuQgWxbpYdoLf7mH+25A7sfQbbxKeS5SQ9QBf97zOY4nOlwtksgDA/czSTmfj4DUEiQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+ 
+
+</body>
+</html>
